@@ -135,18 +135,20 @@ class Game:
         print(self.cd.delta)
 
         # This says how long it would tick and the message will pop out 
-        if self.cd.delta > 2:
+        if self.cd.delta < 2:
             self.draw_text("BEGIN!", 100, BLACK, WIDTH/2, HEIGHT/2)
     
          # self.draw_text(str(self.player.rot), 24, WHITE, WIDTH/2, HEIGHT/2)
             #This says that as long as I am on a platform I am winning 
              # Winning = I am on a platform 
+
+             
         if self.win == pg.sprite.spritecollide(self.player, self.platforms, False):
             self.draw_text("KEEP SURVIVING!", 24, BLACK, WIDTH/2, HEIGHT/2)
 
              # Winning = I am on a platform 
         if self.player.rect.y > HEIGHT:
-            self.draw_text("YOU LOSE", 50, RED, WIDTH/2, HEIGHT/2)
+            self.draw_text("YOU LOSE", 50, RED, WIDTH/2, HEIGHT/2,)
 # This says as long as I am not on a platform, I am loosing or I just lost because the platforms on the bottom will dissappear
     
         # is this a method or a function?
